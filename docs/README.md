@@ -3,6 +3,9 @@ cd docker
 sudo docker-compose up -d
 
 http://82.157.54.206:8000/
+admin
+admin123
+admin@test.com
 ```
 
 ```shell
