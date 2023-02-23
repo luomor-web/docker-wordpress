@@ -1,4 +1,8 @@
 ```shell
+
+```
+
+```shell
 sudo docker container run \
   -d \
   --rm \
@@ -33,4 +37,9 @@ define( 'DB_PASSWORD', getenv_docker('WORDPRESS_DB_PASSWORD', '123456') );
 docker exec -it wordpressdb /bin/bash
 mysql -u root -p
 show databases;
+```
+
+```
+docker wordpress
+docker-compose wordpress
 ```
