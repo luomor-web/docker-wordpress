@@ -42,4 +42,7 @@ show databases;
 ```
 docker wordpress
 docker-compose wordpress
+
+https://cloud.tencent.com/developer/article/2028050
+https://docs.docker.com/compose/wordpress/
 ```
