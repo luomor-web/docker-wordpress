@@ -4,7 +4,7 @@ services:
    db:                   # 服务1：db
      image: mysql:5.7    # 使用镜像 mysql：5.7版本
      volumes:
-       - db_data:/var/lib/mysql   # 数据持久化
+       - ./db_data:/var/lib/mysql   # 数据持久化
      restart: always     # 容器服务宕机后总是重启
      environment:        # 环境配置
        MYSQL_ROOT_PASSWORD: somewordpress
@@ -24,5 +24,3 @@ services:
        WORDPRESS_DB_USER: wordpress    # wordpress的数据库用户为wordpress
        WORDPRESS_DB_PASSWORD: wordpress   # wordpress的数据库密码是wordpress
        WORDPRESS_DB_NAME: wordpress    # wordpress的数据库名字是wordpress
-volumes:
-    db_data: {}
