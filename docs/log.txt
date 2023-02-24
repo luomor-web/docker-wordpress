@@ -140,3 +140,20 @@ PID   USER     TIME  COMMAND
    11 www-data  0:00 php-fpm: pool www
    12 root      0:00 bash
    18 root      0:00 ps -ef
+
+正在安装您上传的主题：wordpress-theme-puock-2.7.4.2.zip
+正在解压缩安装包…
+
+正在安装主题…
+
+主题安装成功。
+
+实时预览实时预览“Puock” | 启用启用“Puock” | 转到“主题”页面
+
+一些翻译需要更新，请稍等。
+
+正在更新（zh_CN）的翻译…
+翻译升级成功。
+
+正在更新Twenty Twenty-Three（zh_CN）的翻译…
+翻译升级成功。
