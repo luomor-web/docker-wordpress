@@ -8,6 +8,10 @@ http://82.157.54.206:8000/
 http://82.157.54.206:8000/wp-admin
 admin
 admin123
+
+http://82.157.54.206:8000/wp-admin/install.php
+admin
+admin123
 admin@test.com
 ```
 
