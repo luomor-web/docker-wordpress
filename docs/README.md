@@ -5,6 +5,7 @@ sudo docker-compose ps
 sudo docker-compose logs -f
 
 docker exec -it wordpress bash
+chown -R www-data:www-data wp-content/
 
 docker cp wordpress:/usr/local/etc etc
 
