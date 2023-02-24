@@ -3,8 +3,14 @@ version: '3.3'           #compose文件版本
 services:
    db:                   # 服务1：db
      image: mysql:5.7    # 使用镜像 mysql：5.7版本
+     command:
+        --character-set-server=utf8mb4
+        --collation-server=utf8mb4_unicode_ci
+        --default-authentication-plugin=mysql_native_password
      volumes:
-       - ./db_data:/var/lib/mysql   # 数据持久化
+        - ./db/conf.d:/etc/mysql/conf.d
+        - ./db/data:/var/lib/mysql
+        - ./db/init-sql:/docker-entrypoint-initdb.d
      restart: always     # 容器服务宕机后总是重启
      environment:        # 环境配置
        MYSQL_ROOT_PASSWORD: somewordpress
