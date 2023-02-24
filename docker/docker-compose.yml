@@ -11,9 +11,11 @@ services:
       - ./db/conf.d:/etc/mysql/conf.d
       - ./db/data:/var/lib/mysql
       - ./db/init-sql:/docker-entrypoint-initdb.d
+    ports:
+      - "3307:3306"
     restart: always     # 容器服务宕机后总是重启
     environment:        # 环境配置
-      MYSQL_ROOT_PASSWORD: somewordpress
+      MYSQL_ROOT_PASSWORD: root
       MYSQL_DATABASE: wordpress
       MYSQL_USER: wordpress
       MYSQL_PASSWORD: wordpress
