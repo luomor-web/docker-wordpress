@@ -13,6 +13,11 @@ http://82.157.54.206:8000/wp-admin/install.php
 admin
 admin123
 admin@test.com
+
+https://hub.docker.com/_/wordpress
+6.1.1
+
+https://www.digitalocean.com/community/tutorials/how-to-install-wordpress-with-docker-compose
 ```
 
 ```shell
