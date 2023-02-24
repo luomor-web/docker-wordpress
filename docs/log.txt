@@ -8,3 +8,111 @@ sudo docker-compose ps
 -----------------------------------------------------------------------------------------------
 docker_db_1          docker-entrypoint.sh --cha ...   Up      0.0.0.0:3307->3306/tcp, 33060/tcp
 docker_wordpress_1   docker-entrypoint.sh apach ...   Up      0.0.0.0:8000->80/tcp
+
+sudo docker-compose up -d
+Creating db ... done
+Creating wordpress ... done
+Creating webserver ... done
+Creating certbot   ... done
+
+sudo docker-compose ps
+  Name                 Command                 State                    Ports
+-------------------------------------------------------------------------------------------
+certbot     certbot certonly --webroot ...   Exit 1
+db          docker-entrypoint.sh --cha ...   Up           0.0.0.0:3307->3306/tcp, 33060/tcp
+webserver   nginx -g daemon off;             Restarting
+wordpress   docker-entrypoint.sh php-fpm     Up           0.0.0.0:9000->9000/tcp
+
+sudo docker-compose logs -f
+Attaching to certbot, webserver, wordpress, db
+certbot      | There seem to be problems with that address. Enter email address (used for
+certbot      | urgent renewal and security notices)
+certbot      |
+certbot      |
+certbot      | Saving debug log to /var/log/letsencrypt/letsencrypt.log
+certbot      | If you really want to skip this, you can run the client with
+certbot      | --register-unsafely-without-email but you will then be unable to receive notice
+certbot      | about impending expiration or revocation of your certificates or problems with
+certbot      | your Certbot installation that will lead to failure to renew.
+certbot      |
+certbot      | An unexpected error occurred:
+certbot      | EOFError
+certbot      | Ask for help or search for solutions at https://community.letsencrypt.org. See the logfile /var/log/letsencrypt/letsencrypt.log or re-run Certbot with -v for more details.
+certbot      |  (Enter 'c' to cancel): webserver    | 2023/02/24 08:57:20 [emerg] 1#1: open() "/etc/nginx/conf.d/options-ssl-nginx.conf" failed (2: No such file or directory) in /etc/nginx/conf.d/nginx-ssl.conf:31
+webserver    | nginx: [emerg] open() "/etc/nginx/conf.d/options-ssl-nginx.conf" failed (2: No such file or directory) in /etc/nginx/conf.d/nginx-ssl.conf:31
+webserver    | 2023/02/24 08:57:21 [emerg] 1#1: open() "/etc/nginx/conf.d/options-ssl-nginx.conf" failed (2: No such file or directory) in /etc/nginx/conf.d/nginx-ssl.conf:31
+webserver    | nginx: [emerg] open() "/etc/nginx/conf.d/options-ssl-nginx.conf" failed (2: No such file or directory) in /etc/nginx/conf.d/nginx-ssl.conf:31
+webserver    | 2023/02/24 08:57:22 [emerg] 1#1: open() "/etc/nginx/conf.d/options-ssl-nginx.conf" failed (2: No such file or directory) in /etc/nginx/conf.d/nginx-ssl.conf:31
+webserver    | nginx: [emerg] open() "/etc/nginx/conf.d/options-ssl-nginx.conf" failed (2: No such file or directory) in /etc/nginx/conf.d/nginx-ssl.conf:31
+webserver    | 2023/02/24 08:57:22 [emerg] 1#1: open() "/etc/nginx/conf.d/options-ssl-nginx.conf" failed (2: No such file or directory) in /etc/nginx/conf.d/nginx-ssl.conf:31
+webserver    | nginx: [emerg] open() "/etc/nginx/conf.d/options-ssl-nginx.conf" failed (2: No such file or directory) in /etc/nginx/conf.d/nginx-ssl.conf:31
+webserver    | 2023/02/24 08:57:24 [emerg] 1#1: open() "/etc/nginx/conf.d/options-ssl-nginx.conf" failed (2: No such file or directory) in /etc/nginx/conf.d/nginx-ssl.conf:31
+webserver    | nginx: [emerg] open() "/etc/nginx/conf.d/options-ssl-nginx.conf" failed (2: No such file or directory) in /etc/nginx/conf.d/nginx-ssl.conf:31
+webserver    | 2023/02/24 08:57:26 [emerg] 1#1: open() "/etc/nginx/conf.d/options-ssl-nginx.conf" failed (2: No such file or directory) in /etc/nginx/conf.d/nginx-ssl.conf:31
+webserver    | nginx: [emerg] open() "/etc/nginx/conf.d/options-ssl-nginx.conf" failed (2: No such file or directory) in /etc/nginx/conf.d/nginx-ssl.conf:31
+webserver    | 2023/02/24 08:57:30 [emerg] 1#1: open() "/etc/nginx/conf.d/options-ssl-nginx.conf" failed (2: No such file or directory) in /etc/nginx/conf.d/nginx-ssl.conf:31
+webserver    | nginx: [emerg] open() "/etc/nginx/conf.d/options-ssl-nginx.conf" failed (2: No such file or directory) in /etc/nginx/conf.d/nginx-ssl.conf:31
+webserver    | 2023/02/24 08:57:36 [emerg] 1#1: open() "/etc/nginx/conf.d/options-ssl-nginx.conf" failed (2: No such file or directory) in /etc/nginx/conf.d/nginx-ssl.conf:31
+webserver    | nginx: [emerg] open() "/etc/nginx/conf.d/options-ssl-nginx.conf" failed (2: No such file or directory) in /etc/nginx/conf.d/nginx-ssl.conf:31
+webserver    | 2023/02/24 08:57:50 [emerg] 1#1: open() "/etc/nginx/conf.d/options-ssl-nginx.conf" failed (2: No such file or directory) in /etc/nginx/conf.d/nginx-ssl.conf:31
+webserver    | nginx: [emerg] open() "/etc/nginx/conf.d/options-ssl-nginx.conf" failed (2: No such file or directory) in /etc/nginx/conf.d/nginx-ssl.conf:31
+webserver    | 2023/02/24 08:58:16 [emerg] 1#1: open() "/etc/nginx/conf.d/options-ssl-nginx.conf" failed (2: No such file or directory) in /etc/nginx/conf.d/nginx-ssl.conf:31
+webserver    | nginx: [emerg] open() "/etc/nginx/conf.d/options-ssl-nginx.conf" failed (2: No such file or directory) in /etc/nginx/conf.d/nginx-ssl.conf:31
+db           | 2023-02-24 08:57:18+00:00 [Note] [Entrypoint]: Entrypoint script for MySQL Server 8.0.27-1debian10 started.
+db           | 2023-02-24 08:57:18+00:00 [Note] [Entrypoint]: Switching to dedicated user 'mysql'
+db           | 2023-02-24 08:57:18+00:00 [Note] [Entrypoint]: Entrypoint script for MySQL Server 8.0.27-1debian10 started.
+db           | 2023-02-24 08:57:18+00:00 [Note] [Entrypoint]: Initializing database files
+db           | 2023-02-24T08:57:18.841242Z 0 [Warning] [MY-010918] [Server] 'default_authentication_plugin' is deprecated and will be removed in a future release. Please use authentication_policy instead.
+db           | 2023-02-24T08:57:18.841264Z 0 [System] [MY-013169] [Server] /usr/sbin/mysqld (mysqld 8.0.27) initializing of server in progress as process 43
+db           | 2023-02-24T08:57:18.870548Z 1 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+db           | 2023-02-24T08:57:20.561644Z 1 [System] [MY-013577] [InnoDB] InnoDB initialization has ended.
+db           | 2023-02-24T08:57:24.007480Z 0 [Warning] [MY-013746] [Server] A deprecated TLS version TLSv1 is enabled for channel mysql_main
+db           | 2023-02-24T08:57:24.007510Z 0 [Warning] [MY-013746] [Server] A deprecated TLS version TLSv1.1 is enabled for channel mysql_main
+db           | 2023-02-24T08:57:24.245685Z 6 [Warning] [MY-010453] [Server] root@localhost is created with an empty password ! Please consider switching off
+the --initialize-insecure option.
+db           | 2023-02-24 08:57:30+00:00 [Note] [Entrypoint]: Database files initialized
+db           | 2023-02-24 08:57:30+00:00 [Note] [Entrypoint]: Starting temporary server
+db           | 2023-02-24T08:57:30.358039Z 0 [Warning] [MY-010918] [Server] 'default_authentication_plugin' is deprecated and will be removed in a future release. Please use authentication_policy instead.
+db           | 2023-02-24T08:57:30.358064Z 0 [System] [MY-010116] [Server] /usr/sbin/mysqld (mysqld 8.0.27) starting as process 92
+db           | 2023-02-24T08:57:30.384152Z 1 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+db           | 2023-02-24T08:57:30.638023Z 1 [System] [MY-013577] [InnoDB] InnoDB initialization has ended.
+db           | 2023-02-24T08:57:30.930537Z 0 [Warning] [MY-013746] [Server] A deprecated TLS version TLSv1 is enabled for channel mysql_main
+db           | 2023-02-24T08:57:30.930565Z 0 [Warning] [MY-013746] [Server] A deprecated TLS version TLSv1.1 is enabled for channel mysql_main
+db           | 2023-02-24T08:57:30.931622Z 0 [Warning] [MY-010068] [Server] CA certificate ca.pem is self signed.
+db           | 2023-02-24T08:57:30.931664Z 0 [System] [MY-013602] [Server] Channel mysql_main configured to support TLS. Encrypted connections are now supported for this channel.
+db           | 2023-02-24T08:57:30.936396Z 0 [Warning] [MY-011810] [Server] Insecure configuration for --pid-file: Location '/var/run/mysqld' in the path is
+accessible to all OS users. Consider choosing a different directory.
+db           | 2023-02-24T08:57:30.953723Z 0 [System] [MY-011323] [Server] X Plugin ready for connections. Socket: /var/run/mysqld/mysqlx.sock
+db           | 2023-02-24T08:57:30.953762Z 0 [System] [MY-010931] [Server] /usr/sbin/mysqld: ready for connections. Version: '8.0.27'  socket: '/var/run/mysqld/mysqld.sock'  port: 0  MySQL Community Server - GPL.
+db           | 2023-02-24 08:57:30+00:00 [Note] [Entrypoint]: Temporary server started.
+db           | Warning: Unable to load '/usr/share/zoneinfo/iso3166.tab' as time zone. Skipping it.
+db           | Warning: Unable to load '/usr/share/zoneinfo/leap-seconds.list' as time zone. Skipping it.
+db           | Warning: Unable to load '/usr/share/zoneinfo/zone.tab' as time zone. Skipping it.
+db           | Warning: Unable to load '/usr/share/zoneinfo/zone1970.tab' as time zone. Skipping it.
+db           | 2023-02-24 08:57:33+00:00 [Note] [Entrypoint]: Creating database wordpress
+db           | 2023-02-24 08:57:33+00:00 [Note] [Entrypoint]: Creating user wordpress
+db           | 2023-02-24 08:57:33+00:00 [Note] [Entrypoint]: Giving user wordpress access to schema wordpress
+db           |
+db           | 2023-02-24 08:57:33+00:00 [Note] [Entrypoint]: Stopping temporary server
+db           | 2023-02-24T08:57:33.323007Z 13 [System] [MY-013172] [Server] Received SHUTDOWN from user root. Shutting down mysqld (Version: 8.0.27).
+db           | 2023-02-24T08:57:35.576682Z 0 [System] [MY-010910] [Server] /usr/sbin/mysqld: Shutdown complete (mysqld 8.0.27)  MySQL Community Server - GPL.
+db           | 2023-02-24 08:57:36+00:00 [Note] [Entrypoint]: Temporary server stopped
+db           |
+db           | 2023-02-24 08:57:36+00:00 [Note] [Entrypoint]: MySQL init process done. Ready for start up.
+db           |
+db           | 2023-02-24T08:57:36.636998Z 0 [Warning] [MY-010918] [Server] 'default_authentication_plugin' is deprecated and will be removed in a future release. Please use authentication_policy instead.
+db           | 2023-02-24T08:57:36.637022Z 0 [System] [MY-010116] [Server] /usr/sbin/mysqld (mysqld 8.0.27) starting as process 1
+db           | 2023-02-24T08:57:36.648620Z 1 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+db           | 2023-02-24T08:57:36.990219Z 1 [System] [MY-013577] [InnoDB] InnoDB initialization has ended.
+db           | 2023-02-24T08:57:37.272192Z 0 [Warning] [MY-013746] [Server] A deprecated TLS version TLSv1 is enabled for channel mysql_main
+db           | 2023-02-24T08:57:37.272219Z 0 [Warning] [MY-013746] [Server] A deprecated TLS version TLSv1.1 is enabled for channel mysql_main
+db           | 2023-02-24T08:57:37.273192Z 0 [Warning] [MY-010068] [Server] CA certificate ca.pem is self signed.
+db           | 2023-02-24T08:57:37.273230Z 0 [System] [MY-013602] [Server] Channel mysql_main configured to support TLS. Encrypted connections are now supported for this channel.
+db           | 2023-02-24T08:57:37.277749Z 0 [Warning] [MY-011810] [Server] Insecure configuration for --pid-file: Location '/var/run/mysqld' in the path is
+accessible to all OS users. Consider choosing a different directory.
+db           | 2023-02-24T08:57:37.295162Z 0 [System] [MY-011323] [Server] X Plugin ready for connections. Bind-address: '::' port: 33060, socket: /var/run/mysqld/mysqlx.sock
+db           | 2023-02-24T08:57:37.295277Z 0 [System] [MY-010931] [Server] /usr/sbin/mysqld: ready for connections. Version: '8.0.27'  socket: '/var/run/mysqld/mysqld.sock'  port: 3306  MySQL Community Server - GPL.
+wordpress    | No 'wp-config.php' found in /var/www/html, but 'WORDPRESS_...' variables supplied; copying '/usr/src/wordpress/wp-config-docker.php' (WORDPRESS_DB_HOST WORDPRESS_DB_NAME WORDPRESS_DB_PASSWORD WORDPRESS_DB_USER)
+wordpress    | [24-Feb-2023 08:57:19] NOTICE: fpm is running, pid 1
+wordpress    | [24-Feb-2023 08:57:19] NOTICE: ready to handle connections
+certbot exited with code 1
