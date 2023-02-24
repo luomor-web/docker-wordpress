@@ -6,6 +6,11 @@ sudo docker-compose logs -f
 
 docker exec -it wordpress bash
 chown -R www-data:www-data wp-content/
+chmod -R 777 /wordpress
+chown -R www-data:www-data /wordpress
+
+vim wp-config.php
+define('FS_METHOD','direct');
 
 docker cp wordpress:/usr/local/etc etc
 
