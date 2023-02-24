@@ -131,3 +131,4 @@ webserver   nginx -g daemon off;             Up      0.0.0.0:8000->80/tcp
 wordpress   docker-entrypoint.sh php-fpm     Up      0.0.0.0:9000->9000/tcp
 
 nginx 413 Request Entity Too Large
+上传的文件大小超过php.ini文件中定义的upload_max_filesize值。
