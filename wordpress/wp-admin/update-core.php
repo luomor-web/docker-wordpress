@@ -901,7 +901,7 @@ function do_core_upgrade( $reinstall = false ) {
 	show_message(
 		'<span class="hide-if-no-js">' . sprintf(
 			/* translators: 1: WordPress version, 2: URL to About screen. */
-			__( 'Welcome to WordPress1 %1$s. You will be redirected to the About WordPress screen. If not, click <a href="%2$s">here</a>.' ),
+			__( 'Welcome to WordPress %1$s. You will be redirected to the About WordPress screen. If not, click <a href="%2$s">here</a>.' ),
 			$result,
 			esc_url( self_admin_url( 'about.php?updated' ) )
 		) . '</span>'
@@ -909,7 +909,7 @@ function do_core_upgrade( $reinstall = false ) {
 	show_message(
 		'<span class="hide-if-js">' . sprintf(
 			/* translators: 1: WordPress version, 2: URL to About screen. */
-			__( 'Welcome to WordPress1 %1$s. <a href="%2$s">Learn more</a>.' ),
+			__( 'Welcome to WordPress %1$s. <a href="%2$s">Learn more</a>.' ),
 			$result,
 			esc_url( self_admin_url( 'about.php?updated' ) )
 		) . '</span>'
