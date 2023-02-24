@@ -18,6 +18,8 @@ https://hub.docker.com/_/wordpress
 6.1.1
 
 https://www.digitalocean.com/community/tutorials/how-to-install-wordpress-with-docker-compose
+
+https://cn.wordpress.org/
 ```
 
 ```shell
