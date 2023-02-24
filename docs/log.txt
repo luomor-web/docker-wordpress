@@ -116,3 +116,16 @@ wordpress    | No 'wp-config.php' found in /var/www/html, but 'WORDPRESS_...' va
 wordpress    | [24-Feb-2023 08:57:19] NOTICE: fpm is running, pid 1
 wordpress    | [24-Feb-2023 08:57:19] NOTICE: ready to handle connections
 certbot exited with code 1
+
+docker-compose up -d
+Creating network "docker_app-network" with driver "bridge"
+Creating db ... done
+Creating wordpress ... done
+Creating webserver ... done
+
+docker-compose ps
+  Name                 Command               State                 Ports
+--------------------------------------------------------------------------------------
+db          docker-entrypoint.sh --cha ...   Up      0.0.0.0:3307->3306/tcp, 33060/tcp
+webserver   nginx -g daemon off;             Up      0.0.0.0:8000->80/tcp
+wordpress   docker-entrypoint.sh php-fpm     Up      0.0.0.0:9000->9000/tcp
