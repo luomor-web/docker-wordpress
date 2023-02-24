@@ -1,0 +1,4 @@
+sudo docker-compose up -d
+Creating network "docker_default" with the default driver
+Creating docker_db_1 ... done
+Creating docker_wordpress_1 ... done
