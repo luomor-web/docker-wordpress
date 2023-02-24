@@ -2,6 +2,8 @@
 cd docker
 sudo docker-compose up -d
 
+sudo docker-compose ps
+
 http://82.157.54.206:8000/
 http://82.157.54.206:8000/wp-admin
 admin

@@ -2,3 +2,9 @@ sudo docker-compose up -d
 Creating network "docker_default" with the default driver
 Creating docker_db_1 ... done
 Creating docker_wordpress_1 ... done
+
+sudo docker-compose ps
+       Name                     Command               State                 Ports
+-----------------------------------------------------------------------------------------------
+docker_db_1          docker-entrypoint.sh --cha ...   Up      0.0.0.0:3307->3306/tcp, 33060/tcp
+docker_wordpress_1   docker-entrypoint.sh apach ...   Up      0.0.0.0:8000->80/tcp
