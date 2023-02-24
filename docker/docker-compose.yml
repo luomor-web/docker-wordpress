@@ -16,6 +16,8 @@ services:
      depends_on:       # wordpress服务启动时依赖db服务，所以会自动先启动db服务
        - db
      image: wordpress:latest    # 使用镜像 wordpress：latest最新版
+     volumes:
+       - ./wordpress:/var/www/html
      ports:
        - "8000:80"          #端口映射8000:80
      restart: always
