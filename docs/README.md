@@ -4,6 +4,10 @@ sudo docker-compose up -d
 sudo docker-compose ps
 sudo docker-compose logs -f
 
+docker exec -it wordpress bash
+
+docker cp wordpress:/usr/local/etc etc
+
 docker-compose logs service_name
 docker-compose exec webserver ls -la /etc/letsencrypt/live
 docker-compose up --force-recreate --no-deps certbot
