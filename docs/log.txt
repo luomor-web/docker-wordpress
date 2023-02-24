@@ -129,3 +129,5 @@ docker-compose ps
 db          docker-entrypoint.sh --cha ...   Up      0.0.0.0:3307->3306/tcp, 33060/tcp
 webserver   nginx -g daemon off;             Up      0.0.0.0:8000->80/tcp
 wordpress   docker-entrypoint.sh php-fpm     Up      0.0.0.0:9000->9000/tcp
+
+nginx 413 Request Entity Too Large
