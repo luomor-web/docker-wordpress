@@ -79,7 +79,7 @@ require_once ABSPATH . 'wp-admin/admin-header.php';
 					<?php
 					printf(
 						/* translators: %s: Version number. */
-						__( 'Welcome to WordPress %s' ),
+						__( 'Welcome to WordPress1 %s' ),
 						$display_version
 					);
 					?>

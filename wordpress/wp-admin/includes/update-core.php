@@ -1519,7 +1519,7 @@ function _redirect_to_about_wordpress( $new_version ) {
 	show_message(
 		'<span class="hide-if-no-js">' . sprintf(
 			/* translators: 1: WordPress version, 2: URL to About screen. */
-			__( 'Welcome to WordPress %1$s. You will be redirected to the About WordPress screen. If not, click <a href="%2$s">here</a>.' ),
+			__( 'Welcome to WordPress1 %1$s. You will be redirected to the About WordPress screen. If not, click <a href="%2$s">here</a>.' ),
 			$new_version,
 			'about.php?updated'
 		) . '</span>'
@@ -1527,7 +1527,7 @@ function _redirect_to_about_wordpress( $new_version ) {
 	show_message(
 		'<span class="hide-if-js">' . sprintf(
 			/* translators: 1: WordPress version, 2: URL to About screen. */
-			__( 'Welcome to WordPress %1$s. <a href="%2$s">Learn more</a>.' ),
+			__( 'Welcome to WordPress1 %1$s. <a href="%2$s">Learn more</a>.' ),
 			$new_version,
 			'about.php?updated'
 		) . '</span>'
