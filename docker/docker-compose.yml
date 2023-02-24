@@ -28,6 +28,8 @@ services:
     container_name: wordpress
     restart: unless-stopped
     env_file: .env
+    ports:
+      - "9000:9000"
     environment:
       - WORDPRESS_DB_HOST=db:3306
       - WORDPRESS_DB_USER=$MYSQL_USER
@@ -45,7 +47,7 @@ services:
     container_name: webserver
     restart: unless-stopped
     ports:
-      - "80:80"
+      - "8000:80"
     volumes:
       - ./wordpress:/var/www/html
       - ./nginx-conf:/etc/nginx/conf.d
