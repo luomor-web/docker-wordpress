@@ -3,6 +3,11 @@ cd docker
 sudo docker-compose up -d
 
 sudo docker-compose ps
+docker-compose logs service_name
+docker-compose exec webserver ls -la /etc/letsencrypt/live
+docker-compose up --force-recreate --no-deps certbot
+docker-compose stop webserver
+curl -sSLo nginx-conf/options-ssl-nginx.conf https://raw.githubusercontent.com/certbot/certbot/master/certbot-nginx/certbot_nginx/_internal/tls_configs/options-ssl-nginx.conf
 
 http://82.157.54.206:8000/
 http://82.157.54.206:8000/wp-admin
